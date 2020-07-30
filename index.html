@@ -1,40 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The SpeedCubers</title>
-    <link rel="icon" type="image/x-icon" href="https://www.rubiks.com/media/favicon/stores/8/icons8-rubik_s-cube-48.png">
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.rubiks.com/media/favicon/stores/8/icons8-rubik_s-cube-48.png">
+    <link rel="icon" type="image/x-icon"
+        href="https://www.rubiks.com/media/favicon/stores/8/icons8-rubik_s-cube-48.png">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://www.rubiks.com/media/favicon/stores/8/icons8-rubik_s-cube-48.png">
     <style>
-        video {
-            /* override other styles to make responsive */
-            width: 100%    !important;
-            height: auto   !important;
-        }
         body {
             background-color: rgb(22, 22, 22);
             color: white;
             font: 20pt Arial;
+            margin: 0;
+            padding: 0;
+            height: 100%;
         }
+
         h1 {
-            text-align: center;font-size:4vw;
-            }
+            text-align: center;
+            font-size: 3vw;
+        }
+
         h2 {
-            text-align: center;font-size:4vw;
+            text-align: center;
+            font-size: 4vw;
             color: rgb(155, 0, 0);
         }
-        p {text-align: center;font-size:2vw;}
+
+        p {
+            text-align: center;
+            font-size: 2vw;
+        }
+
+        nav {
+            background: whitesmoke;
+            height: 200px;
+        }
+
+        label.logo {
+            color: rgb(22, 22, 22);
+            font-size: 5vw;
+            line-height: 80px;
+            page-break-after: 0 100px;
+            font-weight: bold;
+
+        }
+
+        nav ul {
+            float: right;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 3vw;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+
+        a.active,
+        a:hover {
+            background: rgb(22, 22, 22);
+            transition: .5s;
+            border-radius: 3px;
+        }
 
         .container {
             position: relative;
             overflow: hidden;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-            }
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
 
-            /* Then style the iframe to fit in the container div with full height and width */
-            .responsive-iframe {
+        /* Then style the iframe to fit in the container div with full height and width */
+        .responsive-iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -43,22 +93,41 @@
             width: 100%;
             height: 100%;
         }
-
     </style>
 </head>
+
 <body>
     <h1>Bem-Vindo(a) ao meu site improvisado para assistir os magos do cubo<br></h1>
     <h2>Ative tela cheia</h2>
-    <div style="text-align:center">
+    <div id="video" style="text-align:center">
         <div class="container">
-            <iframe class="responsive-iframe" width="1920" height="1080" src="https://playhydrax.com/?v=FEVz6zhuy&remove=banner" frameborder="0" scrolling="0" allowfullscreen></iframe>
-          </div>
+            <iframe class="responsive-iframe" width="1920" height="1080"
+                src="https://playhydrax.com/?v=FEVz6zhuy&remove=banner" frameborder="0" scrolling="0"
+                allowfullscreen></iframe>
+        </div>
     </div>
-    <p>
-        Aproveite me siga nas redes socias
-    </p>
-    <p style="color: rgb(0, 10, 155);">
-        @vivaldo_roque
-    </p>
+    <footer>
+        <nav>
+            <label class="logo">Vivaldo Roque - SpeedCuber</label>
+            <ul>
+                <li><a class="active" href="https://www.instagram.com/vivaldo_roque/">Instagram</a></li>
+                <li><a class="active" href="https://www.youtube.com/channel/UC3f3VeyhqEfnmTWQWLEIOhg">Youtube</a></li>
+                <li><a class="active" href="https://www.facebook.com/vivaldo.cristovao">Facebook</a></li>
+            </ul>
+        </nav>
+        <small>Copyright © 2020 </small>
+    </footer>
+    <script>
+        var response = prompt("Quanto é 1 + 1 ?")
+        if (parseInt(response) == 2) {
+            setTimeout(function () { alert("Pode ver o conteúdo"); }, 1000);
+        }
+        else {
+            document.getElementById("video").style.display = "none"
+            setTimeout(function () { alert("Recarregue a página conta errada video bloqueado!"); }, 1000);
+
+        }
+    </script>
 </body>
+
 </html>
